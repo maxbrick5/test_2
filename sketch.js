@@ -219,7 +219,7 @@ function wallPaperLetters(songName) {
       textSize(spectrum[freq * (i + 1)] + 5);
       //angleRotation = PI/ i *10;
       push();
-      const x = ((windowWidth - marginX * 2) / chars.length+1) * i + 2*marginX
+      const x = ((windowWidth - marginX * 2) / chars.length+1) * (i-1) + 2*marginX
       const y = ((height - infoBoxThickness - 2*marginY) / lineCount) * (line +2) + marginY  + infoBoxThickness
       translate(x, y);
       // rotate(angleRotation);
