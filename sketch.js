@@ -14,9 +14,6 @@ let marginY = 30;
 let choice = 1;
 let font;
 let backColor;
-let RbackColor = 116;
-let GbackColor = 83;
-let BbackColor = 116;
 let color1;
 let color2;
 let color3;
@@ -25,15 +22,14 @@ let choiceC;
 
 let frameCounter =0;
 let direction = "plus";
-let colorFactor = 0.2
+let colorFactor = 0.1                         //Change here the speed at wich the color changes
 
 let totalcharWidth = 0;
 let charWidth = 0;
 
-let infoBoxThickness = 20;
+let infoBoxThickness = 10;
 let pushText = 1;
-let infoFontSize = 20;
-let lineJump;
+let infoFontSize = 15;
 let down;
 
 let energyMatrix = [];
@@ -44,28 +40,30 @@ let textsList = [];
 
 let drops = []
 
-const songPaths = [
-  ['creepy.mp3', 'text1.txt'],
-  ['funnysong.mp3', 'text2.txt'],
-  ['psychedelic.mp3', 'text3.txt'],
-  ['theduel.mp3', 'text4.txt'],
-]
+const songPaths = SONGS                           // See the data.js files for this array content
 
 let currentSong;
 let currentText;
 
 
+
+
+
 // The rest is for the animation and the song playing
 // Upload the songs and the infos here
 function preload() {
-  songsList = songPaths.map(p => loadSound(p[0]))
-  textsList = songPaths.map(p => loadStrings(p[1]))
+  songsList = songPaths.map(p =>  p[0])
+  textsList = songPaths.map(p => p[1])
+ 
+
+  font = loadFont("LazenbyCompLiquid.ttf")
 }
+
+
 
 function setup() {
   createCanvas(windowWidth, windowHeight - 40);                       //Here, change the size of the window
   smooth();
-  font = "carbon";                               // Here, change the font
 
   amp = new p5.Amplitude();
   fft = new p5.FFT();
@@ -82,20 +80,21 @@ function setup() {
   slider = createSlider(0, 1, 0.5, 0.1);
 
   // Set the Pause Play button
-  buttonControl = createButton("Play");
+  buttonControl = createButton("Stop");
   buttonControl.mousePressed(pauseNplay);
 
   // Set the Songs buttons
   buttonRandom = createButton("random");
   buttonRandom.mousePressed(randomise);
+ 
+
 
   //Initialize the whole thing
   const index = floor(random(0, songsList.length))
 
-  currentText = textsList[index];
-  currentSong = songsList[index];
-
-  
+  currentText = loadStrings(textsList[index]);
+  currentSong = loadSound(songsList[index], soundLoaded, soundError, soundLoading);
+ 
 }
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------
@@ -138,12 +137,8 @@ function draw() {
   peakDetect.update(fft);
   fft.smooth(0.9);
 
-  // if (peakDetect.isDetected){
-  //   colorChanger2();
-  // }
-
   // Used in the animation functions to have the letters of the song tittle separate
-  const title = currentSong.file.replace('.mp3', '')
+  let title = cleanName(currentSong.file)
   const buffer = 6
   freq = int(1024 / (title.length +buffer))
   
@@ -155,6 +150,9 @@ function draw() {
 
   //textInfoSlide();                                   //Here, change the way the info text will be displayed
   textInfoAll();
+
+ 
+
 }
 
 //---------------Button Functions----------------
@@ -174,21 +172,22 @@ function pauseNplay() {
 function randomise() {
   buttonControl.html("Stop");
 
-  if (currentSong)
+  if (currentSong){
     currentSong.stop();
+  }
 
   const index = floor(random(0, songsList.length))
 
-  currentText = textsList[index];
-  currentSong = songsList[index];
-  currentSong.play();
+  currentText = loadStrings(textsList[index]);
+  currentSong = loadSound(songsList[index], soundLoaded, soundError, soundLoading);
 
   choice = int(random(0, 3));
 
   // Set the Letter rain function
-  let chars = currentSong.file.split("") 
+  let chars = cleanName(currentSong.file)
+  chars = chars.split("") 
   chars.forEach((l, i) =>{
-    drops[i] = new Letters(l)
+    drops[i] = new Letter(l)
   })
   
 
@@ -208,7 +207,7 @@ function wallPaperLetters(songName) {
   // Array with numbers from 0-9
   const lines = Array.from({length: lineCount}, (_, i) => i)
   // Array with letters
-  const chars = songName.split('')
+  let chars = songName.split('')
 
   textFont(font);
 
@@ -217,14 +216,14 @@ function wallPaperLetters(songName) {
     chars.forEach((char, i) => {
 
       // The "i+1" is to cut out the first chunk of freq, because they are too fidgety
-      textSize(spectrum[freq * (i + 1)]);
+      textSize(spectrum[freq * (i + 1)] + 5);
       //angleRotation = PI/ i *10;
-
       push();
-      const x = ((width - marginX * 2) / chars.length) * i + 2 * marginX
-      const y = ((height - infoBoxThickness - marginY) / lineCount) * line + marginY * 2 + infoBoxThickness
+      const x = ((windowWidth - marginX * 2) / chars.length+1) * i + 2*marginX
+      const y = ((height - infoBoxThickness - 2*marginY) / lineCount) * (line +2) + marginY  + infoBoxThickness
       translate(x, y);
       // rotate(angleRotation);
+      textAlign(CENTER);
       text(char, 0, 0);
       pop();
     })
@@ -236,16 +235,19 @@ function normalText(songName) {
   textFont(font);
   fill(0);
   strokeWeight(1);
-
+  
+ 
   const chars = songName.split("")
 
   chars.forEach((char, i) => {
-    charWidth += textWidth(char * 2);
-
+    
+  
+    charWidth += textWidth(char);
+    
     push();
     translate((width - totalcharWidth) / 2, (height - infoBoxThickness) / 2 + infoBoxThickness);
     textAlign(CENTER);
-    textSize(spectrum[freq * (i + 1)]);
+    textSize(spectrum[freq * (i + 1)]*1.5 + 5);
     text(char, charWidth, 0);
     charWidth += textWidth(char);
     pop();
@@ -262,7 +264,7 @@ function rainLetters(amp){
   background(backColor);
   textFont(font);
   fill(0);
-  let speedFactor = 15;
+  let speedFactor = 8;
   let velosity = amp*speedFactor
 
   drops.forEach((l,i) => {
@@ -279,7 +281,7 @@ function rainLetters(amp){
 function getColor(luminosity) {
   colorMode(HSL, 100);
   let saturation = map(luminosity, 0, 100, 15, 40 )
-  luminosity = map(luminosity, 0, 100, 40, 80)                         // Change the spectrum of the luminosity here
+  luminosity = map(luminosity, 0, 100, 40, 90)                         // Change the spectrum of the luminosity here
   
   
 
@@ -295,6 +297,43 @@ function getColor(luminosity) {
   colorMode(RGB, 255);
 
   return c
+}
+
+function cleanName(entry){
+  let slash = 0
+  let chars = []
+  entry  = entry.replace(".mp3", " ")
+  chars = entry.split("")
+    chars.forEach((char, charIndex) => {
+      if(char == "/") {
+        slash += 1
+      }
+      if(slash == 2) {
+        entry = entry.slice(charIndex+1, chars.length)
+        slash = 0
+
+      }     
+    })
+    return entry
+}
+
+function soundLoaded(){
+  okToPlay = true
+  console.log("im in the success callback")
+  currentSong.play()
+
+}
+
+function soundError(){
+  okToPlay = false
+  console.log("im in the error callback")
+  // console.log(okToPlay)
+}
+
+function soundLoading(){
+  // okToPlay = true
+  console.log("im in the sound loading callback")
+  // console.log(okToPlay)
 }
 
 
@@ -323,9 +362,10 @@ function textInfoSlide() {
 }
 
 function textInfoAll() {
-  lineJump = 17;                                                     // Change here the space in between each line
+  let lineJump = 18;                                                     // Change here the space in between each line
 
   noStroke();
+  textFont("lucida console")
   fill(backColor);
   rect(0, 0, width, infoBoxThickness);
   textAlign(CENTER)                                                 // Change here the allignment of the text (CENTER) (RIGTH) or (LEFT)
