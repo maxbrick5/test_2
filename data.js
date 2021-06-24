@@ -8,7 +8,7 @@ const SONGS =
     ['entries/Andrew Martin/Andrew Martin - mtl_asm_collage2_andrewmartin.mp3', 'entries/Andrew Martin/Andrew Martin - andrew_martin_collage.txt'], 
     ['entries/Becca  Stevens - Jan Esbra Purppl sub/purpl 2 final.mp3', 'entries/Becca  Stevens - Jan Esbra Purppl sub/purpplsubmissionJanEsbra.txt'], 
     ['entries/Ben Bowman - PurPLL Chatterer Box benbowman97@hotmail.com/May12.21PurPLL Chatterer Box.wav', 'entries/Ben Bowman - PurPLL Chatterer Box benbowman97@hotmail.com/PurPLL Chatterer Box Entry.txt'], 
-    ['entries/BoterBoter/BoterBoter - Daans Daans - Lick your Darlings By BoterBoter.wav', 'entries/BoterBoter/BoterBoter.txt'], 
+    ['entries/BoterBoter/BoterBoter - Daans Daans - Lick your Darlings By BoterBoter.mp3', 'entries/BoterBoter/BoterBoter.txt'], 
     ['entries/Bryan Elyo/Brian Elyo - MOBDIVIDUAL - Brian Elyo - I HOPE I WIN PURPLL.m4a', 'entries/Bryan Elyo/Brian Elyo - mobdividual - brian elyo - i hope i win purpll.txt'], 
     ['entries/D. Tilbury/D. Tilbury (that_s my pen-name....real name is[] J. Norton) - Purpll Python Passion Part-1 and Plutonic Panting Passion Part-2.mp3', 'entries/D. Tilbury/D. Tilbury (that_s my pen-name....real name is[] J. Norton) - pppp1_pppp2_readme.txt'], 
     ['entries/Dan O_Grady/Dan O_Grady - ppl who need ppl.mp3', 'entries/Dan O_Grady/Dan O_Grady - ppl who love ppl.txt'], 

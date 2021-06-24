@@ -80,7 +80,7 @@ function setup() {
   slider = createSlider(0, 1, 0.5, 0.1);
 
   // Set the Pause Play button
-  buttonControl = createButton("Stop");
+  buttonControl = createButton("Play");
   buttonControl.mousePressed(pauseNplay);
 
   // Set the Songs buttons
@@ -93,7 +93,7 @@ function setup() {
   const index = floor(random(0, songsList.length))
 
   currentText = loadStrings(textsList[index]);
-  currentSong = loadSound(songsList[index], soundLoaded, soundError, soundLoading);
+  currentSong = loadSound(songsList[index]);
  
 }
 
@@ -280,8 +280,8 @@ function rainLetters(amp){
 
 function getColor(luminosity) {
   colorMode(HSL, 100);
-  let saturation = map(luminosity, 0, 100, 15, 40 )
-  luminosity = map(luminosity, 0, 100, 40, 90)                         // Change the spectrum of the luminosity here
+  let saturation = map(luminosity, 0, 100, 20, 40 )
+  luminosity = map(luminosity, 0, 100, 25, 95)                         // Change the spectrum of the luminosity here
   
   
 
