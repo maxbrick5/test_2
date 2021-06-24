@@ -1,0 +1,13 @@
+Dave Ruckstuhl
+Gainesville, FL
+
+Track was created using the following source samples:
+rythm-2.wav
+phony.wav
+happy-siren.wav
+should-have-known.wav
+
+Some of the samples were re-routed through a semi-working PURPLL
+
+Main working chain was:
+Elektron Model:Samples > PURPLL > Land Devices splitter > 2 Count to 5s > DBA Rooms

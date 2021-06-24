@@ -1,0 +1,7 @@
+Name: Jason Borga
+
+Notes: I made this by chopping up a bunch of the samples into 2 second slices
+ and creating a sequence of them to play through my 
+morphagene, and then ran that through a resonator with its own little sequence, 
+which kinda bounces of the various whirrs and screeches
+of the samples. Cheers!

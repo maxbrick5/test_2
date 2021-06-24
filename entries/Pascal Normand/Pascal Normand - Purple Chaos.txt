@@ -1,0 +1,7 @@
+Track : Purple Chaos
+By Pascal Normand
+
+
+The track was made using only the provided samples. Some were transformed 
+to midi and played by a drum plugin and synth bass plugin. Some effects 
+were applied in Logic, but no other sounds were used.

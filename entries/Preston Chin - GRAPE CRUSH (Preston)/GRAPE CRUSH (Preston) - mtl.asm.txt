@@ -1,0 +1,49 @@
+Name: Preston Chin
+
+[About My Submission]
+
+Title: GRAPE CRUSH
+
+Hey guys! I loved so many of the distorted, feedback-y synth samples in the PURPLL
+ pack and thought to try to use them to make something high energy and old school 
+french electro house-inspired (as a longtime and avid fan of Ed Banger :D). 
+The first samples that popped out to me were the "filtered-pwm-waves" and "jack-white" samples.
+ I gave a bit more meat to the bass by layering in a square wave sub with these samples before
+ some pretty heavy-handed use of distortion and compression to get the sound I wanted. 
+Those "glitch" samples were great to chop, tune, and use as transitional parts because they 
+had so many grainy textures. The screamy, sync lead sound of "chaos-1" was useful to use as 
+a upper register lead element in the latter parts after using some rhythmic filter modulation.
+ Anyway, I had a lot of fun using these samples to make this little demo. Hope you enjoy listening 
+and thanks for the opportunity!
+
+p.s. I lived in Montreal for 6 years and had the most amazing, life-changing time in that beautiful city.
+ It was there where I discovered a love for music and the arts which I continue to hold dearly to this day. 
+I now live in Toronto, but I sincerely hope that you and everyone there are keeping well during this 
+difficult time! Best wishes.
+
+
+[Specific Sample Use]
+
+Main bassline was made entirely of the following samples pitched and processed with various distortion plugins (exception to addition of square wave sub):
+- filtered-pwm-waves (e.g. 0:15)
+- bad-cable (e.g. 0:22)
+- jack-white (e.g. 0:14)
+- pulses (e.g. 0:30)
+- arp-2 (e.g. 1:10, minor octave up part)
+
+Transitional glitchy chops of samples with similar processing interspersed with the bass to add interesting parts:
+- glitch-4  (e.g. 0:14) 
+- rumble-1 (e.g. 0:33)
+
+Lead elements:
+- pulses-2 (e.g. 0:30, quieter middle lead)
+- chaos-1 (e.g. 0:30, filtered modulated upper sync lead)
+
+FX elements:
+- phony (e.g. 0:30, sparkly texture)
+- non-binary (e.g. 0:46)
+- phantom-cartridge (e.g. 1:16)
+- carwash-happytime (e.g. 1:48)
+
+Percussive elements:
+- rythm-2 (e.g. 0:46, low kick during build)

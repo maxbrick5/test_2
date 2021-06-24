@@ -1,0 +1,20 @@
+Hi!
+
+This is my entry for the PLL contest.
+It's a drone improvisation, recorded live in one go with just a few pedals:
+There's (of course) some CT5 in here, playing some notes in Mode 3 grabbed from a little cranked 
+music box (you'd never guess but it's actually playing the Harry Potter main theme :D ).
+Then the PurPLL kicks in with the lead/drone, which was a very happy accident with the 
+LFO settings for both MPY and DIV in drone mode.
+Some vocals enter via a loopstation, and some delay/verb (Polymoon) and some wobble 
+(Julianna) to smear it all out.
+Oh, and to kick things up a notch the PurPLL goes through my circuit-bent DS-1 halfway
+ through (it self-oscillates and plays lovely against the PurPLL's tracking settings).
+
+And that's it!
+The jam is a BIT long perhaps and recording levels weren't great..
+..but I'm sending this anyway cause IMO it perfectly shows how playful and inspirational 
+(and... controllable! Unlike many others) this take on a PLL pedal really is.
+
+Kind regards,
+-Willem, a MTL.ASM enthusiast from the Netherlands.
