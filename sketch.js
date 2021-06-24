@@ -27,9 +27,9 @@ let colorFactor = 0.1                         //Change here the speed at wich th
 let totalcharWidth = 0;
 let charWidth = 0;
 
-let infoBoxThickness = 10;
+let infoBoxThickness = 10;                  // Change the initial size of the box         
 let pushText = 1;
-let infoFontSize = 15;
+let infoFontSize = 15;                      // Here change the font in the box
 let down;
 
 let energyMatrix = [];
@@ -219,8 +219,8 @@ function wallPaperLetters(songName) {
       textSize(spectrum[freq * (i + 1)] + 5);
       //angleRotation = PI/ i *10;
       push();
-      const x = ((windowWidth - marginX * 2) / chars.length+1) * (i-1) + 2*marginX
-      const y = ((height - infoBoxThickness - 2*marginY) / lineCount) * (line +1) + marginY  + infoBoxThickness
+      const x = ((windowWidth - marginX * 2) / chars.length+1) * i + 2*marginX
+      const y = ((height - infoBoxThickness - 2*marginY) / lineCount) * (line+1)  + marginY  + infoBoxThickness
       translate(x, y);
       // rotate(angleRotation);
       textAlign(CENTER);
