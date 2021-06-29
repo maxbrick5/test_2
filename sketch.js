@@ -109,7 +109,7 @@ function draw() {
   if (!currentSong)
     return
 
-  currentSong.setVolume(slider.value())
+  currentSong.setVolume(slider.value() ** 2)
 
   // I do not used the volume... but you never know
   volume = amp.getLevel();
