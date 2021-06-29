@@ -80,11 +80,11 @@ function setup() {
   slider = createSlider(0, 1, 0.5, 0.1);
 
   // Set the Pause Play button
-  buttonControl = createButton("Play");
+  buttonControl = createButton("Start/Stop");
   buttonControl.mousePressed(pauseNplay);
 
   // Set the Songs buttons
-  buttonRandom = createButton("random");
+  buttonRandom = createButton("New Random Track");
   buttonRandom.mousePressed(randomise);
  
 
