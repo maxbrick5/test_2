@@ -160,17 +160,17 @@ function draw() {
 function pauseNplay() {
   if (!currentSong.isPlaying()) {
     currentSong.play();
-    buttonControl.html("Stop");
+    buttonControl.html("Start/Stop");
   }
   else {
     currentSong.pause();
-    buttonControl.html("Play");
+    buttonControl.html("Start/Stop");
   }
 }
 
 
 function randomise() {
-  buttonControl.html("Stop");
+  buttonControl.html("Start/Stop");
 
   if (currentSong){
     currentSong.stop();
